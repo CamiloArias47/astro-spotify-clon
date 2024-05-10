@@ -1,10 +1,12 @@
 ---
-import Home from "../icons/Home.astro"
-import Search from "../icons/Search.astro"
+import Home from "@/icons/Home.astro"
+import Library from "@/icons/Library.astro"
+import Search from "@/icons/Search.astro"
 import SideManuItem from "./SideManuItem.astro"
+import SideMenuCard from "./SideMenuCard.astro"
+import {playlists} from '@/lib/data'
 ---
-<div class="flex flex-col">
-    <nav>
+    <nav class="flex flex-col flex-1 gap-2">
         <ul class="bg-base-layout p-3 rounded-lg">
             <SideManuItem text="Inicio">
                 <Home slot="icon"/>
@@ -13,8 +15,14 @@ import SideManuItem from "./SideManuItem.astro"
                 <Search slot="icon"/>
             </SideManuItem>
         </ul>
-        <div>
-            rest
+        <div class="bg-base-layout p-3 rounded-lg flex-1">
+            <ul>
+                <SideManuItem text="Tu Blibioteca">
+                    <Library slot="icon"/>
+                </SideManuItem>
+                {
+                    playlists.map(playlist => <SideMenuCard playlist={playlist}/>)
+                }
+            </ul>
         </div>
     </nav>
-</div>

@@ -17,7 +17,7 @@ const artistStr = artists.join(', ')
         </picture>
         <div class="flex flex-auto flex-col truncate">
             <h4 class="text-sm">{title}</h4>
-            <span class="text-xs text-gray-400">{artistStr}</span>
+            <span class="artist text-xs text-gray-400">{artistStr}</span>
         </div>
     </a>
 </li>
@@ -28,5 +28,8 @@ const artistStr = artists.join(', ')
     }
     a:hover{
         background-color: #1a1a1a;
+    }
+    .artist{
+        color: rgb(173, 173, 173);
     }
 </style>

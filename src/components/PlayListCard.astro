@@ -11,9 +11,14 @@ const {id, title, cover, artists, color} = playlist
 const artistStr = artists.join(', ')
 ---
 
-<a class="p-2 transition-all duration-1000 overflow-hidden rounded-lg flex flex-col justify-start gap-5 text-white cursor-pointer hover:bg-zinc-500 shadow-lg hover:shadow-xl ">
-    <picture class="h-32 w-32 rounded-md overflow-hidden">
-        <img src={cover} alt={title} class=""/>
+<a class="w-44 p-2 pb-4 transition-all duration-1000 overflow-hidden rounded-lg flex flex-col justify-start gap-2 text-white cursor-pointer hover:bg-zinc-500 shadow-lg hover:shadow-xl ">
+    <picture class="h-aunto w-full rounded-md overflow-hidden aspect-square flex-none">
+        <img 
+            src={cover} 
+            alt={title} 
+            class=""
+            transition:name=´playlist ${id} image´
+        />
     </picture>
     <div class="flex flex-auto flex-col truncate">
         <h4 class="text-sm">{title}</h4>

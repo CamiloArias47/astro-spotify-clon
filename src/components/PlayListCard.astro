@@ -11,18 +11,31 @@ const {id, title, cover, artists, color} = playlist
 const artistStr = artists.join(', ')
 ---
 
-<a class="w-44 p-2 pb-4 transition-all duration-1000 overflow-hidden rounded-lg flex flex-col justify-start gap-2 text-white cursor-pointer hover:bg-zinc-500 shadow-lg hover:shadow-xl ">
+<a 
+    href={`/playlist/${id}`}
+    class="w-44 p-2 pb-4 transition-all duration-1000 overflow-hidden rounded-lg flex flex-col justify-start gap-2 text-white cursor-pointer hover:bg-zinc-500 shadow-lg hover:shadow-xl"
+    transition:name=`playlist ${id} box`
+>
     <picture class="h-aunto w-full rounded-md overflow-hidden aspect-square flex-none">
         <img 
             src={cover} 
-            alt={title} 
-            class=""
-            transition:name=´playlist ${id} image´
+            alt={title}
+            transition:name=`playlist ${id} image`
         />
     </picture>
     <div class="flex flex-auto flex-col truncate">
-        <h4 class="text-sm">{title}</h4>
-        <span class="artist text-xs text-gray-400">{artistStr}</span>
+        <h4 
+            class="text-sm" 
+            transition:name=`playlist ${id} title`
+        >
+            {title}
+        </h4>
+        <span 
+            class="artist text-xs text-gray-400"
+            transition:name=`playlist ${id} artist`
+        >
+            {artistStr}
+        </span>
     </div>
 </a>
 
